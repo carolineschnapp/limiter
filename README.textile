@@ -4,9 +4,7 @@ h2. Installation
 
 STEP 1: Upload the file jquery.limit.min.js to your Shopify theme assets on the Template Editor page.
 
-STEP 2: Add the following code to your theme.liquid layout file before the closing body tag.
-
-(You could add the code to the head element, but for a tiny performance gain add it at bottom.)
+STEP 2: Add the following code to your theme.liquid layout file before the closing body tag:
 
 bc. {{ 'jquery.limit.min.js' | asset_url | script_tag }}
 <script>
@@ -19,7 +17,7 @@ Configuration parameters are all optional.
 
 You pass an object to Shopify.Cart.config().
 
-The keys are...
+That object is a hask of key/value pairs.
 
 limitQuantity: a number, can be set to 0, 1, 2, 3 and up. Use 0 if you want to disable purchase. Default if not specified is 1.
 
@@ -28,6 +26,8 @@ limitPer: that on which the limit is imposed. Use 'product', 'variant' or 'order
 limitProductHandles: an array of product handles. If you don't set that parameter, the limit is imposed on every product in your shop. Default is an empty array.
 
 limitSkipCartPage: a boolean. True if you want customer to skip the cart page and go directly to the checkout when he adds something to the cart. Default is false.
+
+h2. With no configuration object
 
 Shopify.Cart.config(); will limit quantities purchased to 1 per product.
 
