@@ -17,7 +17,7 @@ Configuration parameters are all optional.
 
 You pass an object to Shopify.Cart.config().
 
-That object is a hask of key/value pairs.
+That object is a hash of key/value pairs.
 
 limitQuantity: a number, can be set to 0, 1, 2, 3 and up. Use 0 if you want to disable purchase. Default if not specified is 1.
 
