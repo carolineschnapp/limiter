@@ -8,14 +8,14 @@ STEP 2: Add the following code to your theme.liquid layout file before the closi
 
 bc. {{ 'jquery.limit.min.js' | asset_url | script_tag }}
 <script>
-Shopify.Cart.config();
+Shopify.Cart.limit();
 </script>
 
 h2. Configuration
 
 Configuration parameters are all optional.
 
-You pass an object to Shopify.Cart.config().
+You pass an object to Shopify.Cart.limit().
 
 That object is a hash of key/value pairs.
 
@@ -29,7 +29,7 @@ limitSkipCartPage: a boolean. True if you want customer to skip the cart page an
 
 h2. With no configuration object
 
-Shopify.Cart.config(); will limit quantities purchased to 1 per product.
+Shopify.Cart.limit(); will limit quantities purchased to 1 per product.
 
 h2. Need something different?
 
@@ -37,26 +37,26 @@ Example 1: Limiting to 3 items per product, so you can buy a max of 3 items of t
 
 bc. {{ 'jquery.limit.min.js' | asset_url | script_tag }}
 <script>
-Shopify.Cart.config({ limitQuantity: 3, limitPer: 'product' });
+Shopify.Cart.limit({ limitQuantity: 3, limitPer: 'product' });
 </script>
 
 Example 2: Limiting to 1 item per variant, so customer can buy 1 variant of a product and 1 other variant of same product:
 
 bc. {{ 'jquery.limit.min.js' | asset_url | script_tag }}
 <script>
-Shopify.Cart.config({ limitQuantity: 1, limitPer: 'variant' });
+Shopify.Cart.limit({ limitQuantity: 1, limitPer: 'variant' });
 </script>
 
 Example 3: You have a promo for a product with handle turtles-box and want to limit quantities to 4 per order just for that product:
 
 bc. {{ 'jquery.limit.min.js' | asset_url | script_tag }}
 <script>
-Shopify.Cart.config({ limitQuantity: 4, limitPer: 'product', limitProductHandles: ['turtles-box'] });
+Shopify.Cart.limit({ limitQuantity: 4, limitPer: 'product', limitProductHandles: ['turtles-box'] });
 </script>
 
 Example 4: You sell only one product in your shop, and customers will only want to buy 1 of it:
 
 bc. {{ 'jquery.limit.min.js' | asset_url | script_tag }}
 <script>
-Shopify.Cart.config({ limitQuantity: 1, limitPer: 'order', limitSkipCartPage: true });
+Shopify.Cart.limit({ limitQuantity: 1, limitPer: 'order', limitSkipCartPage: true });
 </script>
