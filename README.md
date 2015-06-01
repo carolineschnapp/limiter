@@ -1,4 +1,4 @@
-# To use in Shopify to limit quantities of products ordered.
+# To use in Shopify to limit quantities of products ordered
 
 The solution can be easily bypassed by anyone who knows how Shopify works: you can 
 
