@@ -1,6 +1,11 @@
-To use in Shopify to limit quantities of products ordered.
+# To use in Shopify to limit quantities of products ordered.
 
-The solution can be easily bypassed by anyone who knows how Shopify works: you can a) disable JavaScript, or b) go directly to the checkout using /checkout, or c) use `<input type="hidden" name="return_to" value="/checkout">` injected to the add to cart form, or d) use a [cart permalink](https://docs.shopify.com/manual/configuration/store-customization/page-specific/cart-page/cart-permalinks) to add any amount of items to the cart at any time.
+The solution can be easily bypassed by anyone who knows how Shopify works: you can 
+
++ disable JavaScript, or
++ go directly to the checkout using `/checkout`, or 
++ use `<input type="hidden" name="return_to" value="/checkout">` injected to the add to cart form, or 
++ use a [cart permalink](https://docs.shopify.com/manual/configuration/store-customization/page-specific/cart-page/cart-permalinks) to add any amount of items to the cart at any time.
 
 To make this tutorial work for you, you will need to disable Ajax in your theme. Head over to your Customize theme page, look in the Cart Page section, and un-check the box "Enable Ajaxify Cart". If you use the Brooklyn theme, go to your Customize theme page, look in the Products section, and un-check the box "Enable slide-out shopping cart". This solution will not work in the Lookbook theme.
 
@@ -87,9 +92,9 @@ Shopify.Cart.limit({ limitQuantity: 1, limitPer: 'order', limitSkipCartPage: tru
 
 ## Add theme settings to configure this from the Customize theme page
 
-While you're on the Edit HTML/CSS page, scroll all the way down in the left-hand side panel, and click **settings_schema.json** under Config.
+While you're on the Edit HTML/CSS page, scroll all the way down in the left-hand side panel, and, under **Config**, click **settings_schema.json**.
 
-Scroll down to the very bottom of your settings_schema.json file, and add this code before the last square bracket `]` and after the last parentheses `}` - make sure to include that first comma `,` since you're modifying a JSON data structure.
+Scroll down to the very bottom of your settings_schema.json file, and add this code before the last square bracket `]` and after the last parentheses `}`. Make sure to include that first comma `,` since you're modifying a JSON data structure.
 
 ```json
   ,
@@ -180,9 +185,9 @@ Scroll down to the very bottom of your settings_schema.json file, and add this c
 
 ```
 
-Click to save your changes.
+Click Save.
 
-And before the closing `</body>` tag in your theme.liquid file. add this:
+Before the closing `</body>` tag in your theme.liquid file, add this:
 
 ```liquid
 {% unless settings.limit == 'No limit' %}
